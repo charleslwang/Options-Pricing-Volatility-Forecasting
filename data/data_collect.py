@@ -25,10 +25,10 @@ if response.status_code == 200:
     df.reset_index(inplace=True)
     df.columns = ["Date", "Open", "High", "Low", "Close", "Volume", "Dividend", "Split"]
 
-    output_file = os.path.join(os.path.join("data", "raw_data"), "stock_data.csv")
+    output_file = os.path.join("data", "raw_data.csv")
 
     df.to_csv(output_file, index=False)
 
-    print("Data saved to stock_data.csv")
+    print("Data saved to raw_data.csv")
 else:
     print("API failed.", response.status_code)
